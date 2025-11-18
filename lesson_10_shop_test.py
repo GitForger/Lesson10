@@ -21,6 +21,7 @@ def driver():
 @allure.description(
     "Авторизация → Добавление 3 товаров → Корзина → Оформление → Проверка Total = 58.29"
 )
+
 @allure.severity(allure.severity_level.CRITICAL)
 def test_full_checkout_flow(driver):
     login_page = LoginPage(driver)
@@ -59,3 +60,5 @@ def test_full_checkout_flow(driver):
             name="shop_result",
             attachment_type=allure.attachment_type.PNG
         )
+
+
