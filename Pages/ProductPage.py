@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Page.CartPage import CartPage
+from Pages.CartPage import CartPage
 
 
 class ProductsPage:
@@ -30,4 +30,5 @@ class ProductsPage:
         ).click()
 
         return CartPage(self.driver)
+
 
