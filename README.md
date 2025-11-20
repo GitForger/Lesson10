@@ -2,14 +2,14 @@
 
 ## Как запустить
 
-# все тесты сразу
+#все тесты сразу
 pytest
 
-# только калькулятор
+#только калькулятор
 pytest Tests/Calc_test.py --alluredir=allure-results
 
-# только магазин
+#только магазин
 pytest Tests/Shop_test.py --alluredir=allure-results
 
-# посмотреть отчёт
+#посмотреть отчёт
 allure serve allure-results
