@@ -1,18 +1,16 @@
-# pages/products_page.py
 import allure
 from typing import Tuple
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from lesson_10_shop_cart import CartPage
+from Pages.CartPage import CartPage
 
 
 class ProductsPage:
     def __init__(self, driver: WebDriver):
         self.driver = driver
         self._cart_link = (By.CLASS_NAME, "shopping_cart_link")
-        # ЭТО САМЫЙ ГЛАВНЫЙ ФИКС — новый локатор 2025 года!
         self._add_to_cart_template = (
             "//div[normalize-space(.)='{}']/ancestor::div[@class='inventory_item_description']//button"
         )
@@ -30,4 +28,7 @@ class ProductsPage:
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self._cart_link)
         ).click()
+
         return CartPage(self.driver)
+
+

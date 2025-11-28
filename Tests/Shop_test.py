@@ -1,7 +1,7 @@
 import allure
 import pytest
-from lesson_10_shop_login_page import LoginPage
-from lesson_10_shop_product_page import ProductsPage
+from Pages.LoginPage import LoginPage
+from Pages.ProductPage import ProductsPage
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 

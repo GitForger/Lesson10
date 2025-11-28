@@ -25,8 +25,10 @@ class LoginPage:
         self._username_field: Tuple[str, str] = (By.ID, "user-name")
         self._password_field: Tuple[str, str] = (By.ID, "password")
         self._login_button: Tuple[str, str] = (By.ID, "login-button")
-        self._error_message: Tuple[str, str] = (By.CSS_SELECTOR, "[data-test='error']")
-        self._error_button: Tuple[str, str] = (By.CSS_SELECTOR, "[data-test='error-button']")
+        self._error_message: Tuple[str, str] = (
+            By.CSS_SELECTOR, "[data-test='error']")
+        self._error_button: Tuple[str, str] = (
+            By.CSS_SELECTOR, "[data-test='error-button']")
 
     @allure.step("Открытие страницы авторизации Swag Labs")
     def open(self) -> None:
@@ -55,7 +57,7 @@ class LoginPage:
         field.clear()
         field.send_keys(username)
 
-    @allure.step("Ввод пароля: {'*' * len(password)}")  # скрываем пароль в отчёте
+    @allure.step("Ввод пароля: ****")  # скрываем пароль в отчёте
     def enter_password(self, password: str) -> None:
         """
         Вводит пароль в поле password.

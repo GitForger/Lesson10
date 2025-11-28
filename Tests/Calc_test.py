@@ -2,7 +2,7 @@ import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from lesson_10_calc_base import CalculatorPage
+from Pages.calc_base import CalculatorPage
 
 
 @pytest.fixture(scope="function")
@@ -45,4 +45,6 @@ def test_calculator_with_delay(driver):
         calc.wait_for_result("15")
 
     with allure.step("Проверяем, что результат действительно 15"):
+
         assert calc.get_result() == "15", f"Ожидали 15, а получили {calc.get_result()!r}"
+
